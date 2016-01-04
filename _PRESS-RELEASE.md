@@ -17,28 +17,28 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+  > liveStreamRadio
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  > This is for real time sharing of music between DJ's and listeners. 
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > A DJ is able to login, create, and broadcast a live stream of music. Listeners can tune in to a DJ's stream, give feedback through a rating system, and chat with the DJ and other listeners in realtime. The DJ can change songs based on user feeback from the rating system and chatroom.
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > DJ's and listeners can now interact in realtime.  
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > DJ's can easily sign-in and begin broadcasting live sets. Listeners can tunes in a select to listen to the DJ's live stream, while providing feedback through the UI.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > A real-time virtual listening room.
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > Login and listen.
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > Online, interactive DJ'ing, and listening made easy.
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  > Head over to "www.example.com" for a live demo.
