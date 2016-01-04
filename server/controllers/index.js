@@ -1,25 +1,27 @@
+var fs = require('fs');
+
 module.exports = {
 
   stream: {
 
     play: function (req, res) {
-      console.log('play'); 
+      res.sendStatus(200).end();
     },
 
     stream: function (req, res) {
-      console.log('stream');
+      res.sendStatus(200).end();
     },
 
     pause: function (req, res) {
-     console.log('pause');
+     res.sendStatus(200).end();
     },
 
     resume: function (req, res) {
-     console.log('resume');
+     res.sendStatus(200).end();
     },
 
     skip: function (req, res) {
-      console.log('skip');
+      res.sendStatus(200).end();
     }
     
   }
