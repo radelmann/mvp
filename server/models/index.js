@@ -33,7 +33,6 @@ module.exports = {
 
         var bit_rate = data.format.bit_rate;
         console.log(data);
-
         var stream = fs.createReadStream(file);
 
         //thottle stream reading to match file bit rate
@@ -58,6 +57,7 @@ module.exports = {
         if (err) {
           console.log(err);
         } else {
+          //todo handle song overlap
           callback();
         }
       });
