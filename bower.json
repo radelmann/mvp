@@ -1,0 +1,25 @@
+{
+  "name": "liveStreamRadio",
+  "description": "Live Audio Streaming",
+  "main": "server/index.js",
+  "authors": [
+    "radelmann"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/radelmann/2015-11-mvp",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.16",
+    "angular-route": "~1.3.16",
+    "angular-mocks": "~1.3.16"
+  }
+}
