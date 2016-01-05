@@ -7,6 +7,9 @@ var nextMediaFile = 'Get_Down_Test_1.mp3';
 var mediaFilePath = __dirname + mediaDir + mediaFile;
 var nextFilePath = __dirname + mediaDir + nextMediaFile;
 
+var globals = {};
+globals.currentStream = null;
+
 module.exports = {
 
   stream: {
@@ -14,7 +17,15 @@ module.exports = {
       var fileName = req.body.fileName;
       console.log('fileName: ' + fileName);
       mediaFilePath = __dirname + mediaDir + fileName;
-      models.stream.start(req, res, mediaFilePath);
+
+      if (globals.currentStream === null) {
+        globals.currentStream = models.stream.start(req, res, mediaFilePath);
+      } else {
+        models.stream.end(function() {
+          console.log('end currentStream');
+          globals.currentStream = models.stream.start(req, res, mediaFilePath);
+        });
+      }
     },
 
     pause: function(req, res) {
@@ -29,7 +40,7 @@ module.exports = {
 
     next: function(req, res) {
       models.stream.end(function() {
-        models.stream.start(req, res, nextFilePath);
+        globals.currentStream = models.stream.start(req, res, nextFilePath);
       });
     },
 

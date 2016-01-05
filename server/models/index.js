@@ -20,7 +20,7 @@ var nextFilePath = __dirname + mediaDir + nextMediaFile;
 //todo -- global vars where to store these ??? 
 var globals = {};
 globals.clients = [];
-globals.currentStream;
+globals.currentStream = null;
 
 module.exports = {
 
@@ -49,6 +49,8 @@ module.exports = {
         globals.currentStream = stream;
 
         res.sendStatus(200).end();
+
+        return globals.currentStream;
       });
     },
 
@@ -63,6 +65,7 @@ module.exports = {
       });
 
       globals.currentStream.destroy();
+      console.log('currentStream destroyed');
     }
   },
 
