@@ -11,6 +11,9 @@ module.exports = {
 
   stream: {
     stream: function(req, res) {
+      var fileName = req.body.fileName;
+      console.log('fileName: ' + fileName);
+      mediaFilePath = __dirname + mediaDir + fileName;
       models.stream.start(req, res, mediaFilePath);
     },
 

@@ -2,7 +2,7 @@ var controller = require('./controllers');
 
 var router = require('express').Router();
 
-router.get("/stream", controller.stream.stream);
+router.post("/stream", controller.stream.stream);
 
 router.get("/pause", controller.stream.pause);
 
