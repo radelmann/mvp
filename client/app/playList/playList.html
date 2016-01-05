@@ -1,8 +1,8 @@
 <div id='container' ng-model='liveStream.playList' >
-  
+  <h1>liveStream Playist</h1>
   <div class='play-list-track' ng-repeat='track in data.tracks'>
 
-    <div ng-click='playTrack(track)' class='title'>{{ track.fileName }}</div>
+    <div ng-click='playTrack(track)' class='track-title {{selected}}'>{{ track.fileName }}</div>
     
   </div>
 </div>

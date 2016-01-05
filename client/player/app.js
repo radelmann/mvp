@@ -15,7 +15,7 @@ $(function() {
     var frequencyData = new Uint8Array(100);
 
     var svgHeight = '100';
-    var svgWidth = '675';
+    var svgWidth = '800';
     var barPadding = '1';
 
     function createSvg(parent, height, width) {
