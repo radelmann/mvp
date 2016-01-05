@@ -8,31 +8,35 @@
     <link rel="stylesheet" href="/css/chat-style.css">
   </head>
   <body>
-      <h1>liveStream Listener Page</h1>
+      <div class="main-container">
+      <h1>liveStream Listenening Room</h1>
 
-      <audio id="player" src='/api/addClient' class="player" controls autoplay ></audio> 
+      <audio id="player" class="player" src='/api/addClient' class="player" controls autoplay></audio> 
 
       <!-- chat view UI -->
-      <div class="chat-container">
-        
+      
+        <div class="chat-container">
         <ul class="pages">
           <li class="chat page">
-            <div class="chatArea">
+            <div class="chats">
             <ul class="messages"></ul>
           </div>
-          <input class="inputMessage" placeholder="Type here..."/>
+          <input class="input-message" placeholder="Type here..."/>
         </li>
         <li class="login page">
           <div class="form">
             <h3 class="title">What's your username?</h3>
-            <input class="usernameInput" type="text" maxlength="14" />
+            <input class="username-input" type="text" maxlength="14" />
           </div>
         </li>
       </ul>
 
       </div>
+    </div>
+
       <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
       <script src="/lib/socket.io.js"></script>
       <script src="/chat/app.js"></script>
+
   </body>
 </html>

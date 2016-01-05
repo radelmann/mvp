@@ -1,6 +1,8 @@
 $(function() {
   var FADE_TIME = 150; // ms
   var TYPING_TIMER_LENGTH = 400; // ms
+  
+  //random colors for user ids
   var COLORS = [
     '#e21400', '#91580f', '#f8a700', '#f78b00',
     '#58dc00', '#287b00', '#a8f07a', '#4ae8c4',
@@ -9,9 +11,9 @@ $(function() {
 
   // Initialize variables
   var $window = $(window);
-  var $usernameInput = $('.usernameInput'); // Input for username
+  var $usernameInput = $('.username-input'); // Input for username
   var $messages = $('.messages'); // Messages area
-  var $inputMessage = $('.inputMessage'); // Input message input box
+  var $inputMessage = $('.input-message'); // Input message input box
 
   var $loginPage = $('.login.page'); // The login page
   var $chatPage = $('.chat.page'); // The chatroom page
@@ -87,7 +89,7 @@ $(function() {
     var $usernameDiv = $('<span class="username"/>')
       .text(data.username)
       .css('color', getUsernameColor(data.username));
-    var $messageBodyDiv = $('<span class="messageBody">')
+    var $messageBodyDiv = $('<span class="message-body">')
       .text(data.message);
 
     var typingClass = data.typing ? 'typing' : '';
@@ -225,7 +227,6 @@ $(function() {
 
   // Socket events
 
-  // Whenever the server emits 'login', log the login message
   socket.on('login', function (data) {
     connected = true;
     // Display the welcome message
@@ -236,30 +237,25 @@ $(function() {
     addParticipantsMessage(data);
   });
 
-  // Whenever the server emits 'new message', update the chat body
   socket.on('new message', function (data) {
     addChatMessage(data);
   });
 
-  // Whenever the server emits 'user joined', log it in the chat body
   socket.on('user joined', function (data) {
     log(data.username + ' joined');
     addParticipantsMessage(data);
   });
 
-  // Whenever the server emits 'user left', log it in the chat body
   socket.on('user left', function (data) {
     log(data.username + ' left');
     addParticipantsMessage(data);
     removeChatTyping(data);
   });
 
-  // Whenever the server emits 'typing', show the typing message
   socket.on('typing', function (data) {
     addChatTyping(data);
   });
 
-  // Whenever the server emits 'stop typing', kill the typing message
   socket.on('stop typing', function (data) {
     removeChatTyping(data);
   });
