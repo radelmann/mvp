@@ -12,4 +12,6 @@ router.get("/next", controller.stream.next);
 
 router.get("/addClient", controller.stream.addClient);
 
+router.get("/media", controller.media.get);
+
 module.exports = router;

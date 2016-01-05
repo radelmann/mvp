@@ -63,6 +63,7 @@ module.exports = {
 
   stream: {
     stream: function(req, res) {
+
       startStream(req, res, mediaFilePath, connectedClients, function(err, stream) {
         if (err) {
           console.log(err);
@@ -91,7 +92,7 @@ module.exports = {
           }
         });
       });
-      
+
     },
 
     addClient: function(req, res) {
@@ -110,6 +111,26 @@ module.exports = {
       connectedClients.push(res);
 
       console.log('client connected - add response to global array');
+    }
+  },
+
+  media: {
+    get: function(req, res) {
+      //return json list of files in media folder
+      fs.readdir(__dirname + mediaDir, function(err, files) {
+        if (err) {
+          console.log(err);
+          throw (err);
+        } else {
+          var ret = [];
+          files.forEach(function(file) {
+            var fileObj = {};
+            fileObj.fileName = file;
+            ret.push(fileObj);
+          });
+          res.json(ret).end();
+        }
+      });
     }
   }
 };
