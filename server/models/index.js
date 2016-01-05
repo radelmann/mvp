@@ -40,6 +40,7 @@ module.exports = {
 
         stream.on('data', function(data) {
           //push data to all connected clients
+          //todo fix delay
           globals.clients.forEach(function(client) {
             console.log('writing data for client');
             client.write(data);

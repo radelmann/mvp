@@ -39,6 +39,7 @@ module.exports = {
     },
 
     next: function(req, res) {
+      //todo - auto select next song
       models.stream.end(function() {
         globals.currentStream = models.stream.start(req, res, nextFilePath);
       });
