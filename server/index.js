@@ -88,8 +88,5 @@ io.on('connection', function(socket) {
   });
 });
 
-// if we are being run directly, run the server.
-//if (!module.parent) {
 http.listen(app.get("port"));
 console.log("Listening on", app.get("port"));
-// }

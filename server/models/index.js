@@ -79,9 +79,11 @@ module.exports = {
         } else {
           var ret = [];
           files.forEach(function(file) {
-            var fileObj = {};
-            fileObj.fileName = file;
-            ret.push(fileObj);
+            if (file.indexOf('.mp3') !== -1) {
+              var fileObj = {};
+              fileObj.fileName = file;
+              ret.push(fileObj);
+            }
           });
           res.json(ret).end();
         }

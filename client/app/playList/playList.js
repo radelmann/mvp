@@ -10,7 +10,7 @@ angular.module('liveStream.playList', [])
       if ($scope.lastSelected) {
         $scope.lastSelected.selected = '';
       }
-      
+
       this.selected = 'selected';
       $scope.lastSelected = this;
 
