@@ -246,4 +246,10 @@ $(function() {
   socket.on('stop typing', function (data) {
     removeChatTyping(data);
   });
+
+  socket.on('current-track', function (data) {
+    console.log(data);
+    $('#nowPlaying').text('now playing ... ' + data.track);
+    $('.marquee').marquee({ duration: 10000});
+  });
 });

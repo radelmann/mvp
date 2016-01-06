@@ -184,3 +184,8 @@ ul {
   right: 0;
   width: 99%;
 }
+
+.marquee {
+  width: 800px;
+  overflow: hidden;
+}

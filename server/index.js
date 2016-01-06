@@ -86,6 +86,14 @@ io.on('connection', function(socket) {
       });
     }
   });
+
+  //send current track to all connected clients
+  socket.on('current-track', function(data) {
+    console.log('socket current-track ' + data);
+    socket.broadcast.emit('current-track', {
+      track: data
+    });
+  });
 });
 
 http.listen(app.get("port"));

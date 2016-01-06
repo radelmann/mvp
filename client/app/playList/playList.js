@@ -16,6 +16,9 @@ angular.module('liveStream.playList', [])
 
       playList.play(track).then(function(response) {
         console.log('track playing');
+
+        //emit socket event with current track
+        emitCurrentTrack(track.fileName);
       });
     };
 
