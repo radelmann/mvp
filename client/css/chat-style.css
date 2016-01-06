@@ -32,6 +32,10 @@ html, body {
   font-weight: bold;
 }
 
+#container {
+  margin-bottom:20px;
+}
+
 h1 {
   color:#00CCFF;
 }
@@ -61,9 +65,17 @@ ul {
   margin-right: auto;
 }
 
+
+.listeners {
+  font-size: 20px;
+  color:#00CCFF;
+}
+
+.listeners-count {
+  font-size: 20px;
+}
+
 .chat-container {
-  /*height:300px;
-  width:300px;*/
 }
 
 /* Pages */
