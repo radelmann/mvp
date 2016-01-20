@@ -6,6 +6,7 @@ module.exports.app = app;
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var socketHandler = require('./sockets.js');
+
 io.on('connection', socketHandler);
 
 //parsing and loggin
