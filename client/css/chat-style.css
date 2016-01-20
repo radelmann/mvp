@@ -82,14 +82,14 @@ ul {
 
 
 .pages {
-  height: 80%;
+  height: 75%;
   margin: 0;
   padding: 0;
   width: 800px;
 }
 
 .page {
-  height: 80%;
+  height: 75%;
   position: absolute;
   width: 800px;
 }
