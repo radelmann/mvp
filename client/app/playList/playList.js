@@ -1,5 +1,5 @@
 angular.module('liveStream.playList', [])
-  .controller('playListController', function($scope, playList) {
+  .controller('playListController', function($scope, socket, playList) {
     $scope.data = {};
 
     playList.getAll().then(function(data) {
@@ -15,11 +15,17 @@ angular.module('liveStream.playList', [])
       $scope.lastSelected = this;
 
       playList.play(track).then(function(response) {
-        console.log('track playing');
-
         //emit socket event with current track
-        emitCurrentTrack(track.fileName);
+        socket.emit('current-track', track.fileName);
       });
     };
+
+    socket.on('user joined', function(data) {
+      $('#listeners').text(data.numUsers);
+    });
+
+    socket.on('user left', function(data) {
+      $('#listeners').text(data.numUsers);
+    });
 
   });
